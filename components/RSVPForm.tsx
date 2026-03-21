@@ -11,7 +11,7 @@ import { CheckCircle2, MessageCircle, Sparkles } from 'lucide-react';
 const rsvpSchema = z.object({
   name: z.string().min(2, 'O nome deve ter pelo menos 2 caracteres'),
   guestsCount: z.number().min(1, 'Mínimo 1 pessoa').max(20, 'Máximo 20 pessoas'),
-  phone: z.string().optional(),
+  phone: z.string().min(8, 'O telefone deve ter pelo menos 8 dígitos'),
 });
 
 type RSVPFormData = z.infer<typeof rsvpSchema>;
@@ -135,7 +135,7 @@ export default function RSVPForm() {
             
             <div className="flex items-center justify-center gap-2 mb-2">
               <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" />
-              <h3 className="text-2xl font-bold text-gray-800">Presença Confirmada!</h3>
+              <h3 className="text-2xl font-display font-bold text-gray-800">Presença Confirmada!</h3>
               <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" />
             </div>
             
@@ -161,7 +161,7 @@ export default function RSVPForm() {
         </motion.div>
       ) : (
         <div className="bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center justify-center gap-2 text-center">
+          <h3 className="text-2xl font-display font-bold text-gray-900 mb-6 flex items-center justify-center gap-2 text-center">
             <CheckCircle2 className="text-red-600" />
             Confirme sua Presença
           </h3>
@@ -190,13 +190,14 @@ export default function RSVPForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Seu Telefone (Opcional)</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Seu Telefone</label>
               <input
                 {...register('phone')}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all"
+                className={`w-full px-4 py-3 rounded-lg border ${errors.phone ? 'border-red-500' : 'border-gray-300'} focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all`}
                 placeholder="(11) 99999-9999"
                 suppressHydrationWarning
               />
+              {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>}
             </div>
 
             <button

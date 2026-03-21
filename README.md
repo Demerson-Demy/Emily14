@@ -1,20 +1,29 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Emily_14
 
-# Run and deploy your AI Studio app
+Convite digital para a festa de 14 anos da Emily com tema de futebol do São Paulo FC, confirmação via WhatsApp e lista de convidados.
 
-This contains everything you need to run your app locally.
+## Como Executar Localmente
 
-View your app in AI Studio: https://ai.studio/apps/d68b8a02-463d-420b-b1ba-a365f9404d2e
+### Pré-requisitos
+- Node.js instalado
 
-## Run Locally
+### Passos para Instalação
+1. Instalar dependências:
+   ```bash
+   npm install
+   ```
 
-**Prerequisites:**  Node.js
+2. Configurar variáveis de ambiente:
+   - Crie um arquivo `.env.local` na raiz do projeto.
+   - Defina o valor de `NEXT_PUBLIC_GEMINI_API_KEY` para sua chave de API do Gemini.
+   - Adicione também as chaves do Supabase se desejar salvar os dados no banco:
+     ```env
+     NEXT_PUBLIC_SUPABASE_URL=seu_url_aqui
+     NEXT_PUBLIC_SUPABASE_ANON_KEY=sua_chave_aqui
+     NEXT_PUBLIC_GEMINI_API_KEY=sua_chave_gemini_aqui
+     ```
 
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+3. Execute o aplicativo:
+   ```bash
+   npm run dev
+   ```

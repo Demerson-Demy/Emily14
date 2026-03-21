@@ -11,7 +11,7 @@ export default function Page() {
   const [view, setView] = useState<'invite' | 'admin'>('invite');
 
   return (
-    <main className="min-h-screen relative font-sans selection:bg-red-200 overflow-x-hidden bg-zinc-900">
+    <main className="min-h-screen relative font-sans selection:bg-red-200 overflow-x-hidden bg-zinc-900 antialiased">
       {/* Navigation for Admin Toggle (Subtle) */}
       <div className="fixed top-4 right-4 z-50">
         <button 
@@ -31,11 +31,11 @@ export default function Page() {
             {/* Background Image for the Card Content */}
             <div className="absolute inset-0 z-0 opacity-15">
               <Image 
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Est%C3%A1dio_do_Morumbi.jpg/1200px-Est%C3%A1dio_do_Morumbi.jpg" 
-                alt="Estádio Morumbi"
+                src="https://images.unsplash.com/photo-1522770179533-24471fcdba45?q=80&w=2000&auto=format&fit=crop" 
+                alt="Estádio de Futebol"
                 fill
                 className="object-cover"
-                unoptimized
+                referrerPolicy="no-referrer"
               />
             </div>
 
@@ -47,7 +47,7 @@ export default function Page() {
                 fill
                 className="object-cover"
                 priority
-                unoptimized
+                referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-black/20"></div>
             </div>
@@ -63,10 +63,10 @@ export default function Page() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                <h2 className="text-red-600 font-black text-xl md:text-2xl tracking-[0.3em] uppercase mb-2">
+                <h2 className="text-red-600 font-display font-black text-xl md:text-2xl tracking-[0.3em] uppercase mb-2">
                   Convocação Tricolor
                 </h2>
-                <h1 className="text-4xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
+                <h1 className="text-4xl md:text-7xl font-display font-black text-gray-900 mb-6 leading-tight">
                   EMILY <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-black to-gray-600">
                     14 ANOS
@@ -96,7 +96,7 @@ export default function Page() {
               viewport={{ once: true }}
               className="bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-lg border border-white/20"
             >
-              <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+              <h3 className="text-xl font-display font-bold text-gray-900 mb-6 flex items-center gap-2">
                 <MapPin className="text-red-600" />
                 Local da Partida
               </h3>
