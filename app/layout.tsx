@@ -11,6 +11,7 @@ const inter = Inter({
 const outfit = Outfit({
   subsets: ['latin'],
   variable: '--font-display',
+  weight: ['400', '500', '600', '700', '800', '900'],
 });
 
 export const metadata: Metadata = {
@@ -20,11 +21,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${outfit.variable}`} suppressHydrationWarning>
+    <html lang="pt-BR" className={`${inter.variable} ${outfit.variable}`}>
       <body className="font-sans antialiased">
-        <MotionWrapper>
-          {children}
-        </MotionWrapper>
+        {children}
       </body>
     </html>
   );

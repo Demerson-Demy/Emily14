@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Users, LogOut, Lock, ShieldAlert } from 'lucide-react';
 
 const ADMIN_EMAIL = "dgoncalves@hotmail.com.br";

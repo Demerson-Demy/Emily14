@@ -5,7 +5,7 @@ import { supabase } from '@/lib/supabase';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { CheckCircle2, MessageCircle, Sparkles } from 'lucide-react';
 
 const rsvpSchema = z.object({
